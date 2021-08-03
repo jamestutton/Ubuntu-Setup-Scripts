@@ -160,6 +160,13 @@ execute sudo apt-get install google-chrome-stable -y
 #execute sudo apt-get install chromium-browser -y
 execute sudo apt-get install firefox -y
 
+#Brave
+execute sudo apt install apt-transport-https curl -y
+execute sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+execute echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+execute sudo apt update
+execute sudo apt install brave-browser -y
+
 # Install tor
 #if [[ ! -n $(lsb_release -d | grep 18) ]]; then
 #    execute sudo add-apt-repository ppa:webupd8team/tor-browser -y
